@@ -89,9 +89,22 @@ header .mobile {
   display: none;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (min-width: 450px) and (max-width: 760px) {
+  header .mobile .button {
+    padding: .1875rem .5rem;
+    background-color: #9dc20b;
+    line-height: 1.6;
+    color: white;
+  }
+} 
+
+@media only screen and (max-width: 450px) {
   header .desktop {
     display: none;
+  }
+
+  header {
+    height: 3rem;
   }
 
   header .mobile {
@@ -100,12 +113,14 @@ header .mobile {
   }
 
   header .content {
-    padding: .5rem 0;
+    padding:  0;
+    margin: 0;
+    align-items: flex-start;
   }
 
   header .mobile ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
   }
@@ -119,6 +134,8 @@ header .mobile {
     background-color: #9dc20b;
     line-height: 1.6;
     color: white;
+    align-items: flex-start;
+    margin-right: 1rem;
   }
 }
 
@@ -290,7 +307,7 @@ header .mobile {
   }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 450px) {
   #features-section {
     flex-flow: column;
     padding: 0;
@@ -299,6 +316,7 @@ header .mobile {
   .feature {
     margin: 0;
     padding: 1.25rem 1rem 0 1rem;
+    width: 100%;
   }
 }
 
@@ -307,6 +325,7 @@ header .mobile {
 #filters-section {
   padding: 4rem 0;
   background-color: #4a4a4a;
+  width: 100%;
 }
 
 #filters-section .content {
@@ -328,9 +347,16 @@ header .mobile {
 }
 
 #filters-section .images-container {
+  display: flex;
   max-width: 100%;
   padding: 0 1%;
 }
+
+#filters-section .images-container .image-container img {
+  width: 100%;
+  height: 100%;
+}
+
 
 @media only screen and (max-width: 760px) {
   #filters-section {
@@ -368,11 +394,11 @@ header .mobile {
   background-color: #f3f3f3;
 }
 
-#quotes-section content {
+#quotes-section .content {
   padding: 5rem 0;
 }
 
-#quotes-section quote {
+#quotes-section .quote {
   padding-right: 1.875rem;
   font-family: "Palatino", serif;
   font-size: 1.875rem;
@@ -381,7 +407,7 @@ header .mobile {
   color: #4a4a4a;
 }
 
-#quotes-section quote-citation {
+#quotes-section .quote-citation {
   height: 1.875rem;
 }
 
@@ -390,12 +416,12 @@ header .mobile {
     padding: 1.875rem .625rem;
   }
 
-  #quotes-section quote {
+  #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
   }
 
-  #quotes-section quote-citation {
+  #quotes-section .quote-citation {
     display: block;
     padding-top: 1rem;
     margin: auto;
