@@ -8,6 +8,7 @@ html {
 .main-content {
   position: relative;
   top: 77px; /* To offset for fixed header. */
+
 }
 
 .center {
@@ -25,7 +26,8 @@ html {
 }
 
 .image-container img {
-  display: block;
+  display: inline-flex;
+  max-width: 100%;
 }
 
 @media only screen and (max-width: 760px) {
@@ -116,13 +118,14 @@ header .mobile {
     padding:  0;
     margin: 0;
     align-items: flex-start;
+    height: 3rem;
+    display: flex;
   }
 
   header .mobile ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
   }
 
   header .mobile li {
@@ -130,12 +133,10 @@ header .mobile {
   }
 
   header .mobile .button {
-    padding: .1875rem .5rem;
+    padding: .18752rem .5rem;
     background-color: #9dc20b;
-    line-height: 1.6;
+    line-height: 1.6rem;
     color: white;
-    align-items: flex-start;
-    margin-right: 1rem;
   }
 }
 
@@ -149,6 +150,9 @@ header .mobile {
   background-image: url('../images/banner-landingpage.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: bottom;
+  
+  
 }
 
 #sign-up-cta {
@@ -159,6 +163,7 @@ header .mobile {
   margin-top: 170px;
   margin-left: 100px;
   margin-bottom: 170px;
+  display: flex;
 }
 
 #sign-up-cta .content {
@@ -205,6 +210,7 @@ header .mobile {
     align-items: center;
     justify-content: center;
     height: 28rem;
+    padding-right: 15%;
   }
 
   #sign-up-cta {
@@ -235,7 +241,16 @@ header .mobile {
 @media only screen and (max-width: 450px) {
   #sign-up-section {
     height: 20rem;
+    background-position: 88% 50%;
+    padding-right: 60%;
+    padding-left: 30%;
   }
+
+  #sign-up-cta {
+    display: flex;
+    justify-content: left;
+  }
+
 
   #sign-up-cta h1 {
     font-size: 2.25rem;
@@ -253,7 +268,6 @@ header .mobile {
   justify-content: space-between;
   padding: 4rem 5%;
   background-color: #f3f3f3;
-  width: 100%;
 }
 
 .feature {
@@ -311,6 +325,7 @@ header .mobile {
   #features-section {
     flex-flow: column;
     padding: 0;
+    align-items: center;
   }
 
   .feature {
@@ -318,6 +333,12 @@ header .mobile {
     padding: 1.25rem 1rem 0 1rem;
     width: 100%;
   }
+
+  .feature .image-container {
+    width: 90%;
+    height: 65%;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 /* Filters Section */
