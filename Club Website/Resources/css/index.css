@@ -1,0 +1,90 @@
+html {
+    font-size: 16px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    display: inline-flex;
+}
+
+li {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 550px) {
+    .logo {
+        display: none;
+    }
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+    }
+}
+
+
+.banner {
+    background-image: url('../images/race2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+}
+
+.banner h1 {
+    text-align: center;
+    align-self: center;
+    background-color: white;
+}
+
+.about h2, p {
+    text-align: center;
+}
+
+.about img {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+    .about img {
+        width: 100%;
+    }
+}
+
+.events h2 {
+    text-align: center;
+}
+
+.events img {
+    height: 100%;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 500px) {
+    .footer-container {
+        display: block;
+        text-align: center;
+    }
+}
