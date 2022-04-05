@@ -57,6 +57,10 @@ function findInvalidCreditCards(cardBatch) {
     return invalidCards;
 }
 
+function findInvalidCreditCardsAlternative(cardBatch) {
+    return cardBatch.filter( card => !validateCreditCard(card) )
+}
+
 function getInvalidCardCompanies(invalidCards) {
     const cardCompanies = [];
     for(card of invalidCards) {
@@ -77,6 +81,7 @@ function getInvalidCardCompanies(invalidCards) {
     return new Set(cardCompanies);
 }
 
-const invalidCards = findInvalidCreditCards(batch);
+//const invalidCards = findInvalidCreditCards(batch);
+const invalidCards = findInvalidCreditCardsAlternative(batch);
 const invalidCardCompanies = getInvalidCardCompanies(invalidCards);
 console.log(invalidCardCompanies);
