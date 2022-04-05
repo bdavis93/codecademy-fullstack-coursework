@@ -25,7 +25,37 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 
+function validateCred (arr) {
+ let newArray = [];
+    for (i = arr.length - 2; i >= 0; i -= 2) {
+        if (arr[i] >= 5) {
+            newArray.push((arr[i] * 2) - 9);
+        } else {
+            newArray.push(arr[i] * 2);
+        }
+    }
+    for (i = arr.length - 1; i >= 0; i -= 2) {
+        newArray.push(arr[i]);
+    }
 
+    const initialValue = 0;
+    const sum = newArray.reduce((prevValue, currentValue) => prevValue + currentValue, initialValue);
+
+    if (sum % 10 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(validateCred(valid2));
+
+function findInvalidCards (nestedArray) {
+    const invalidCards = nestedArray.filter(card => validateCred(card) === false);
+    return invalidCards;
+}
+
+console.log(findInvalidCards(batch));
 
 
 
