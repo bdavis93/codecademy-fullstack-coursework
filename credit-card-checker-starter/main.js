@@ -10,7 +10,7 @@ const invalid1 = [4, 5, 3, 2, 7, 7, 8, 7, 7, 1, 0, 9, 1, 7, 9, 5]
 const invalid2 = [5, 7, 9, 5, 5, 9, 3, 3, 9, 2, 1, 3, 4, 6, 4, 3]
 const invalid3 = [3, 7, 5, 7, 9, 6, 0, 8, 4, 4, 5, 9, 9, 1, 4]
 const invalid4 = [6, 0, 1, 1, 1, 2, 7, 9, 6, 1, 7, 7, 7, 9, 3, 5]
-const invalid5 = [5, 3, 8, 2, 0, 1, 9, 7, 7, 2, 8, 8, 3, 8, 5, 4]
+const invalid5 = [7, 3, 8, 2, 0, 1, 9, 7, 7, 2, 8, 8, 3, 8, 5, 4]
 
 // Can be either valid or invalid
 const mystery1 = [3, 4, 4, 8, 0, 1, 9, 6, 8, 3, 0, 5, 4, 1, 4]
@@ -58,7 +58,31 @@ function findInvalidCards (nestedArray) {
 console.log(findInvalidCards(batch));
 
 
+function idInvalidCardCompanies (nestedArr) {
+    let invalidCompanies = [];
+    const amex = element => element[0] === 3;
+    const visa = element => element[0] === 4;
+    const master = element => element[0] === 5;
+    const discover = element => element[0] === 6;
+    const notFound = element => element[0] > 6 || element[0] < 3;
+    if(nestedArr.some(amex) === true) {
+        invalidCompanies.push('Amex');
+    }
+    if(nestedArr.some(visa) === true) {
+        invalidCompanies.push('Visa');
+    }
+    if(nestedArr.some(master) === true) {
+        invalidCompanies.push('Mastercard');
+    }
+    if(nestedArr.some(discover) === true) {
+        invalidCompanies.push('Discover');
+    }
+    if(nestedArr.some(notFound) === true) {
+        invalidCompanies.push('Company not found.');
+    }
+    return invalidCompanies;
+}
 
-
+console.log(idInvalidCardCompanies(findInvalidCards(batch)));
 
 
