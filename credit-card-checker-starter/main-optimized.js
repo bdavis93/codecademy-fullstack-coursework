@@ -78,7 +78,7 @@ function getInvalidCardCompanies(invalidCards) {
                 cardCompanies.push(CreditCard.UNKNOWN.name);
         }
     }
-    return new Set(cardCompanies);
+    return Array.from(new Set(cardCompanies));
 }
 
 //const invalidCards = findInvalidCreditCards(batch);
